@@ -1,0 +1,21 @@
+{
+    "name": "lunaris-php/lunaris",
+    "description": "PHP Micro Framework",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Lunaris\\Framework\\": "core/framework/",
+            "App\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Bhaswanth Chiruthanuru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "pecee/simple-router": "dev-master"
+    }
+}
