@@ -1,0 +1,11 @@
+<?php
+
+    require_once "vendor/autoload.php";
+
+    use Lunaris\Framework\Nova\Kernel;
+
+    $args = $argv;
+
+    $kernel = new Kernel(__DIR__);
+    $kernel->setArgs($args);
+    $kernel->loadArgs();
