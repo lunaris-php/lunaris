@@ -5,6 +5,6 @@
     class AboutController
     {
         public function about() {
-            return "This is about page";
+            return view("about", ['module' => 'About']);
         }
     }

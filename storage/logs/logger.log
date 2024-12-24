@@ -1,0 +1,4 @@
+[24-Dec-2024 15:48:45 Europe/Berlin] PHP Warning:  The use statement with non-compound name 'Exception' has no effect in /opt/lampp/htdocs/lunaris/framework/app/System/framework/funcs.php on line 3
+[24-Dec-2024 15:48:50 Europe/Berlin] PHP Warning:  The use statement with non-compound name 'Exception' has no effect in /opt/lampp/htdocs/lunaris/framework/app/System/framework/funcs.php on line 3
+[24-Dec-2024 15:51:00 Europe/Berlin] PHP Warning:  The use statement with non-compound name 'Exception' has no effect in /opt/lampp/htdocs/lunaris/framework/app/System/framework/funcs.php on line 3
+[24-Dec-2024 15:54:35 Europe/Berlin] PHP Warning:  The use statement with non-compound name 'Exception' has no effect in /opt/lampp/htdocs/lunaris/framework/app/System/framework/funcs.php on line 3

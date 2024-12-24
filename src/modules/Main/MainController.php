@@ -5,6 +5,12 @@
     class MainController
     {
         public function index() {
-            return "Hello world from main route";
+            return view("home", [
+                "args" => [
+                    "message" => "This is a test message",
+                    "isit" => true,
+                    "number" => 10
+                ]
+            ]);
         }
     }
