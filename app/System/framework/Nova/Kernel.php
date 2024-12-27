@@ -4,6 +4,7 @@
 
     use Lunaris\Framework\Nova\Process\Key;
     use Lunaris\Framework\Nova\Process\Module;
+    use Lunaris\Framework\Nova\Process\Generate;
 
     class Kernel
     {
@@ -30,6 +31,10 @@
                     case "make:module" :
                         $module = new Module($this->path, $this->args);
                         $module->generate();
+                        break;
+                    case "make:controller" :
+                        $generate = new Generate($this->path, $this->args);
+                        $generate->controller();
                         break;
                     default :
                         break;

@@ -4,6 +4,8 @@
 
     use Exception;
 
+    use Lunaris\Framework\Nova\Process\Template;
+
     class Module
     {
         private $path;
@@ -35,42 +37,13 @@
             mkdir($modulePath, 0755, true);
             mkdir("{$modulePath}/views", 0755, true);
 
-            $controllerCode = $this->getControllerCode($moduleName);
+            $controllerCode = Template::controller($moduleName);
             file_put_contents("{$modulePath}/{$moduleName}Controller.php", $controllerCode);
 
-            $routerCode = $this->getRouterCode($moduleName);
+            $routerCode = Template::router($moduleName);
             file_put_contents("{$modulePath}/routes.php", $routerCode);
             
             echo "Module '{$moduleName}' created successfully in src/modules." . PHP_EOL;
             echo "Add module name {$moduleName} to App/Config/modules.php to activate the module." . PHP_EOL;
-        }
-
-        public function getControllerCode($moduleName) {
-            $controllerFileContent = <<<PHP
-            <?php
-                namespace Module\\{$moduleName};
-
-                class {$moduleName}Controller {
-                    public function index() {
-                        echo "This is the {$moduleName} module.";
-                    }
-                }
-            PHP;
-
-            return $controllerFileContent;
-        }
-
-        public function getRouterCode($moduleName) {
-            $routerFileContent = <<<PHP
-            <?php
-
-                use Lunaris\Framework\Http\Router;
-
-                Router::get("/{$moduleName}", function() {
-                    return "This is the {$moduleName} route.";
-                });
-            PHP;
-
-            return $routerFileContent;
         }
     }
