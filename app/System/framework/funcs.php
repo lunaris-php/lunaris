@@ -16,7 +16,7 @@
         $module = $options['module'] ?? 'Main';
         $args = $options['args'] ?? [];
         $path = str_replace(".", "/", $path);
-        $viewPath = "src/modules/" . $module . "/views/" . $path . ".php";
+        $viewPath = "../src/modules/" . $module . "/views/" . $path . ".php";
         if (!file_exists($viewPath)) {
             throw new Exception("View file not found: {$viewPath}");
         }
@@ -32,7 +32,7 @@
         $module = $options['module'] ?? 'Main';
         $args = $options['args'] ?? [];
         $path = str_replace(".", "/", $path);
-        $viewPath = "src/modules/" . $module . "/views/" . $path . ".php";
+        $viewPath = "../src/modules/" . $module . "/views/" . $path . ".php";
         if (!file_exists($viewPath)) {
             throw new Exception("View file not found: {$viewPath}");
         }
@@ -94,7 +94,7 @@
      */
     function storage_path($path)
     {
-        $file = dirname(__FILE__)."/storage/public/".$path;
+        $file = dirname(__FILE__)."/../storage/public/".$path;
         return $file;
     }
 
@@ -117,7 +117,7 @@
     {
         if(storage_exists($path))
         {
-            unlink("./storage/public/".$path);
+            unlink("../storage/public/".$path);
             return true;
         }
         return false;

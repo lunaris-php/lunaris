@@ -1,5 +1,18 @@
-RewriteEngine on
-RewriteCond %{SCRIPT_FILENAME} !-f
-RewriteCond %{SCRIPT_FILENAME} !-d
-RewriteCond %{SCRIPT_FILENAME} !-l
-RewriteRule ^(.*)$ index.php/$1
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+    RewriteEngine on
+
+    <Files .env>
+        Order allow,deny
+        Deny from all
+    </Files>
+
+    <Files *.log>
+        Order allow,deny
+        Deny from all
+    </Files>
+
+    RewriteRule ^([a-zA-Z0-9\-\_\/]*)$ public/$1
+</IfModule>

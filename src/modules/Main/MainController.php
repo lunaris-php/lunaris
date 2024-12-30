@@ -17,14 +17,6 @@
         }
 
         public function index() {
-            $posts = Post::query()->where('category', '=', 6)->orWhere('category', '=', 8);
-
-            if($posts->count()) {
-                print '<pre>';
-                print_r($posts->get());
-                print '</pre>';
-            } else {
-                echo "No Posts Found";
-            }
+            return "This is the main module";
         }
     }
