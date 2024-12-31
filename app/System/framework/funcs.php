@@ -1,6 +1,8 @@
 <?php
 
     use Lunaris\Framework\Http\Router;
+    use Pecee\Http\Request;
+    use Pecee\Http\Response;
 
     function env($key, $default = null) {
         if (array_key_exists($key, $_ENV)) {

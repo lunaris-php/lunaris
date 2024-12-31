@@ -3,6 +3,7 @@
     namespace Lunaris\Framework\App;
 
     use Lunaris\Framework\Http\Router;
+    use Lunaris\Framework\Http\Security\CsrfVerifier;
 
     use Dotenv\Dotenv;
 
@@ -32,6 +33,8 @@
         }
 
         public function loadRoutes($modules) {
+            Router::csrfVerifier(new CsrfVerifier());
+            
             $modulesPath = $this->path . '/src/modules/';
             if(count($modules) > 0) {
                 foreach($modules as $module) {

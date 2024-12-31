@@ -28,7 +28,7 @@ class DB
     }
 
     // Get the PDO instance
-    private static function getPdo()
+    public static function getPdo()
     {
         self::initialize();
         return self::$connection->getPdoInstance(); // Access the PDO instance from QueryBuilderHandler
