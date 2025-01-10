@@ -18,7 +18,7 @@
 
         public function execute() {
             $path = $this->args[2];
-            $filePath = $this->path . '/app/Migrations/' . $path . '.sql';
+            $filePath = $this->path . '/app/Database/Migrations/' . $path . '.sql';
             $sql = file_get_contents($filePath);
 
             if ($sql === false) {
