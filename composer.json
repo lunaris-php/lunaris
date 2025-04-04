@@ -23,6 +23,7 @@
     ],
     "minimum-stability": "dev",
     "prefer-stable": true,
+    "license": "MIT",
     "require": {
         "lunaris/framework": "dev-main",
         "lunaris/security": "dev-main",
